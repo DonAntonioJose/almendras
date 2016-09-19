@@ -2,4 +2,4 @@
 
 .sass-cache/**/*
 basic_layout/.sass-cache/**/*
-stylesheets/*.css
+basic_layout/stylesheets/*
