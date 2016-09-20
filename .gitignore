@@ -1,5 +1,6 @@
 #git ignore
 
+*.css
 .sass-cache/**/*
 basic_layout/.sass-cache/**/*
-basic_layout/stylesheets/*
+
