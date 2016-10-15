@@ -12,6 +12,7 @@
 </head>
  
 <body>
+  <div class="container">
     <nav class="menu">
       <ul class="items">
         <li class="element-item">Option 1</li>
@@ -20,8 +21,14 @@
       </ul>
     </nav>
     <section class="content">
-      <article class="sub-content">
-        <h1>Principal title web.</h1>
+      <article class="sub-content cover">
+        <figure>
+          <img src="images/chair.jpg" alt="corporative image" class="image">
+          <div class="layout-opacity"></div>
+        </figure>
+        <div class= "cover-content">
+          <h1 class="box">Principal title web.</h1>
+        </div>
         <button class="button">Press me</button>        
       </article>
       <article class="sub-content">
@@ -55,7 +62,7 @@
         <form action="contact.php" method="post"> 
             Name : <input type="text" name="name" size="40" length="40" value="Name"><BR> 
             Email : <input type="text" name="email" size="40" length="40" value="Email"><BR> 
-            Comments : <input type="text" name="comments" size="240" length="240" value="Comments"><BR> 
+            Comments : <input type="text" name="comments" size="40" length="40" value="Comments"><BR> 
             <input type="submit" name="submit" value="Submit"> 
             <input type="reset" name="reset" value="Clear It"> 
         </form> 
@@ -64,5 +71,6 @@
     <footer>
       <p>This part is for the footer</p>
     </footer>
+  </div>
 </body>
 </html>
