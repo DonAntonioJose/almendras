@@ -129,6 +129,56 @@ $headers = 'From: '.$email_from."\r\n".
 mail("$email_to","$email_subject","$email_message","From: $headers \nMime-Version: 1.0\nContent-Type: text/html; charset=ISO-8859-1\nContent-Transfer-Encoding: 7bit");
 //@mail($email_to, $email_subject, $email_message, $headers);  
  
+
+/* // Javi Cepas 16/10/16 12:56
+// Creamos las funciones de conexión con PostgreSQL
+    function connect_PostgreSQL( $host, $bd, $user, $password )
+    {
+        $connection = pg_connect( "host=".$host." "."dbname=".$bd." "."user=".$user." "."password=".$password) or die( "Error in the conection: ".pg_last_error() );
+
+        return $connection;
+    }
+
+    // ----------------------------------------------
+
+    function insert( $connection, $first_name, $last_name, $email_from, $telephone, $message )
+    {
+
+
+
+        $sql = "INSERT INTO contacts VALUES (".$first_name.", '".$last_name."', '".$email_from."', '".$telephone.",'".$message."')";
+
+        // Ejecutamos la consulta (se devolverá true o false):
+        return pg_query( $connection, $sql );
+    }
+
+
+
+    $db = connect_PostgreSQL('host=localhost dbname=contacts user=jcepas password=13579'); 
+
+//  Interpreto que no habría que volver a definirlo, puesto que ya estarían definidas anteriormente,
+//  no se si sería necesario que se pusiera delante PG_ESCAPE_STRING
+
+    $first_name = pg_escape_string($_POST['first_name']); // requerido
+    $last_name = pg_escape_string($_POST['last_name']); // requerido
+    $email_from = pg_escape_string($_POST['email']); // requerido
+    $telephone = pg_escape_string($_POST['telephone']); // no requerido 
+    $message = pg_escape_string($_POST['message']); // requerido
+
+
+    $ok = insert( $connection, $first_name, $last_name, $email_from, $telephone, $message );
+
+        if( $ok == false )
+            echo "Something not work, please try again. <br/>";
+        else
+            echo "The comments was store..<br/>";
+        
+        pg_close(); 
+
+ Estoy probando que se lanza la conexión y se guarda el mensaje, ahora mismo no está funcionando. (16/10/16) */
+//
+    
+    
 ?>
  
  
